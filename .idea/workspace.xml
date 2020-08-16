@@ -25,11 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36c426b6-83a5-4ac3-8f08-6301e57081cf" name="Default Changelist" comment="Group class was created &#10;Add group test was updated according to homework requirements">
-      <change afterPath="$PROJECT_DIR$/contact.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_add_new_contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="36c426b6-83a5-4ac3-8f08-6301e57081cf" name="Default Changelist" comment="Add new contact test was created &#10;New class Contact was added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597568909539</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add new contact test was created &#10;New class Contact was added">
+      <created>1597593866395</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1597593866395</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,7 +176,8 @@
     <MESSAGE value="test 2" />
     <MESSAGE value="First test was created;" />
     <MESSAGE value="Group class was created &#10;Add group test was updated according to homework requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Group class was created &#10;Add group test was updated according to homework requirements" />
+    <MESSAGE value="Add new contact test was created &#10;New class Contact was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new contact test was created &#10;New class Contact was added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="383" key="#Notifications" timestamp="1597566975716">
@@ -188,22 +192,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="827" y="270" key="EnvironmentVariablesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591394131" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1597591464722">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1597593718284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591464722" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1597591464721">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597593718284" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1597593718284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591464721" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1597591464721">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597593718284" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1597593718284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591464721" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1597591464722">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597593718284" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1597593718284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591464722" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597593718284" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1597428103347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -212,6 +216,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597568944970" />
+    <state x="645" y="308" key="git4idea.merge.GitPullDialog" timestamp="1597593884269">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="645" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597593884269" />
     <state x="803" y="71" width="787" height="676" key="refactoring.ChangeSignatureDialog" timestamp="1597592421126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
