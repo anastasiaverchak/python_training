@@ -1,0 +1,1503 @@
+Testing started at 18:03 ...
+C:\Users\averchak\PycharmProjects\python_training\env\Scripts\python.exe "C:\Program Files\JetBrains\PyCharm Community Edition 2020.1.2\plugins\python-ce\helpers\pycharm\_jb_pytest_runner.py" --path C:/Users/averchak/PycharmProjects/python_training/test_add_group.py
+Launching pytest with arguments C:/Users/averchak/PycharmProjects/python_training/test_add_group.py in C:\Users\averchak\PycharmProjects\python_training
+
+============================= test session starts =============================
+platform win32 -- Python 3.8.3, pytest-6.0.1, py-1.9.0, pluggy-0.13.1 -- C:\Users\averchak\PycharmProjects\python_training\env\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\averchak\PycharmProjects\python_training
+collecting ... collected 1 item
+
+test_add_group.py::test_add_group FAILED                                 [100%]
+test_add_group.py:13 (test_add_group)
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+
+    def _new_conn(self):
+        """ Establish a socket connection and set nodelay settings on it.
+    
+        :return: New socket connection.
+        """
+        extra_kw = {}
+        if self.source_address:
+            extra_kw["source_address"] = self.source_address
+    
+        if self.socket_options:
+            extra_kw["socket_options"] = self.socket_options
+    
+        try:
+>           conn = connection.create_connection(
+                (self._dns_host, self.port), self.timeout, **extra_kw
+            )
+
+env\lib\site-packages\urllib3\connection.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+address = ('127.0.0.1', 64704), timeout = <object object at 0x00000214D006F210>
+source_address = None, socket_options = [(6, 1, 1)]
+
+    def create_connection(
+        address,
+        timeout=socket._GLOBAL_DEFAULT_TIMEOUT,
+        source_address=None,
+        socket_options=None,
+    ):
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        An host of '' or port 0 tells the OS to use the default.
+        """
+    
+        host, port = address
+        if host.startswith("["):
+            host = host.strip("[]")
+        err = None
+    
+        # Using the value from allowed_gai_family() in the context of getaddrinfo lets
+        # us select whether to work with IPv4 DNS records, IPv6 records, or both.
+        # The original create_connection function always returns all records.
+        family = allowed_gai_family()
+    
+        for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket.socket(af, socktype, proto)
+    
+                # If provided, set socket level options before connecting.
+                _set_socket_options(sock, socket_options)
+    
+                if timeout is not socket._GLOBAL_DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+                sock.connect(sa)
+                return sock
+    
+            except socket.error as e:
+                err = e
+                if sock is not None:
+                    sock.close()
+                    sock = None
+    
+        if err is not None:
+>           raise err
+
+env\lib\site-packages\urllib3\util\connection.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+address = ('127.0.0.1', 64704), timeout = <object object at 0x00000214D006F210>
+source_address = None, socket_options = [(6, 1, 1)]
+
+    def create_connection(
+        address,
+        timeout=socket._GLOBAL_DEFAULT_TIMEOUT,
+        source_address=None,
+        socket_options=None,
+    ):
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        An host of '' or port 0 tells the OS to use the default.
+        """
+    
+        host, port = address
+        if host.startswith("["):
+            host = host.strip("[]")
+        err = None
+    
+        # Using the value from allowed_gai_family() in the context of getaddrinfo lets
+        # us select whether to work with IPv4 DNS records, IPv6 records, or both.
+        # The original create_connection function always returns all records.
+        family = allowed_gai_family()
+    
+        for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket.socket(af, socktype, proto)
+    
+                # If provided, set socket level options before connecting.
+                _set_socket_options(sock, socket_options)
+    
+                if timeout is not socket._GLOBAL_DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+>               sock.connect(sa)
+E               ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+env\lib\site-packages\urllib3\util\connection.py:74: ConnectionRefusedError
+
+During handling of the above exception, another exception occurred:
+
+self = <urllib3.connectionpool.HTTPConnectionPool object at 0x00000214D1476730>
+method = 'POST', url = '/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'
+body = '{"url": "http://localhost/addressbook/"}'
+headers = {'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/3.141.0 (python windows)'}
+retries = Retry(total=0, connect=None, read=None, redirect=None, status=None)
+redirect = False, assert_same_host = False
+timeout = <object object at 0x00000214D12AF190>, pool_timeout = None
+release_conn = True, chunked = False, body_pos = None
+response_kw = {'request_url': 'http://127.0.0.1:64704/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'}
+conn = None, release_this_conn = True, err = None, clean_exit = False
+timeout_obj = Timeout(connect=<object object at 0x00000214D006F210>, read=<object object at 0x00000214D006F210>, total=None)
+is_new_proxy_conn = False
+
+    def urlopen(
+        self,
+        method,
+        url,
+        body=None,
+        headers=None,
+        retries=None,
+        redirect=True,
+        assert_same_host=True,
+        timeout=_Default,
+        pool_timeout=None,
+        release_conn=None,
+        chunked=False,
+        body_pos=None,
+        **response_kw
+    ):
+        """
+        Get a connection from the pool and perform an HTTP request. This is the
+        lowest level call for making a request, so you'll need to specify all
+        the raw details.
+    
+        .. note::
+    
+           More commonly, it's appropriate to use a convenience method provided
+           by :class:`.RequestMethods`, such as :meth:`request`.
+    
+        .. note::
+    
+           `release_conn` will only behave as expected if
+           `preload_content=False` because we want to make
+           `preload_content=False` the default behaviour someday soon without
+           breaking backwards compatibility.
+    
+        :param method:
+            HTTP request method (such as GET, POST, PUT, etc.)
+    
+        :param body:
+            Data to send in the request body (useful for creating
+            POST requests, see HTTPConnectionPool.post_url for
+            more convenience).
+    
+        :param headers:
+            Dictionary of custom headers to send, such as User-Agent,
+            If-None-Match, etc. If None, pool headers are used. If provided,
+            these headers completely replace any pool-specific headers.
+    
+        :param retries:
+            Configure the number of retries to allow before raising a
+            :class:`~urllib3.exceptions.MaxRetryError` exception.
+    
+            Pass ``None`` to retry until you receive a response. Pass a
+            :class:`~urllib3.util.retry.Retry` object for fine-grained control
+            over different types of retries.
+            Pass an integer number to retry connection errors that many times,
+            but no other types of errors. Pass zero to never retry.
+    
+            If ``False``, then retries are disabled and any exception is raised
+            immediately. Also, instead of raising a MaxRetryError on redirects,
+            the redirect response will be returned.
+    
+        :type retries: :class:`~urllib3.util.retry.Retry`, False, or an int.
+    
+        :param redirect:
+            If True, automatically handle redirects (status codes 301, 302,
+            303, 307, 308). Each redirect counts as a retry. Disabling retries
+            will disable redirect, too.
+    
+        :param assert_same_host:
+            If ``True``, will make sure that the host of the pool requests is
+            consistent else will raise HostChangedError. When False, you can
+            use the pool on an HTTP proxy and request foreign hosts.
+    
+        :param timeout:
+            If specified, overrides the default timeout for this one
+            request. It may be a float (in seconds) or an instance of
+            :class:`urllib3.util.Timeout`.
+    
+        :param pool_timeout:
+            If set and the pool is set to block=True, then this method will
+            block for ``pool_timeout`` seconds and raise EmptyPoolError if no
+            connection is available within the time period.
+    
+        :param release_conn:
+            If False, then the urlopen call will not release the connection
+            back into the pool once a response is received (but will release if
+            you read the entire contents of the response such as when
+            `preload_content=True`). This is useful if you're not preloading
+            the response's content immediately. You will need to call
+            ``r.release_conn()`` on the response ``r`` to return the connection
+            back into the pool. If None, it takes the value of
+            ``response_kw.get('preload_content', True)``.
+    
+        :param chunked:
+            If True, urllib3 will send the body using chunked transfer
+            encoding. Otherwise, urllib3 will send the body using the standard
+            content-length form. Defaults to False.
+    
+        :param int body_pos:
+            Position to seek to in file-like body in the event of a retry or
+            redirect. Typically this won't need to be set because urllib3 will
+            auto-populate the value when needed.
+    
+        :param \\**response_kw:
+            Additional parameters are passed to
+            :meth:`urllib3.response.HTTPResponse.from_httplib`
+        """
+        if headers is None:
+            headers = self.headers
+    
+        if not isinstance(retries, Retry):
+            retries = Retry.from_int(retries, redirect=redirect, default=self.retries)
+    
+        if release_conn is None:
+            release_conn = response_kw.get("preload_content", True)
+    
+        # Check host
+        if assert_same_host and not self.is_same_host(url):
+            raise HostChangedError(self, url, retries)
+    
+        # Ensure that the URL we're connecting to is properly encoded
+        if url.startswith("/"):
+            url = six.ensure_str(_encode_target(url))
+        else:
+            url = six.ensure_str(parse_url(url).url)
+    
+        conn = None
+    
+        # Track whether `conn` needs to be released before
+        # returning/raising/recursing. Update this variable if necessary, and
+        # leave `release_conn` constant throughout the function. That way, if
+        # the function recurses, the original value of `release_conn` will be
+        # passed down into the recursive call, and its value will be respected.
+        #
+        # See issue #651 [1] for details.
+        #
+        # [1] <https://github.com/urllib3/urllib3/issues/651>
+        release_this_conn = release_conn
+    
+        # Merge the proxy headers. Only do this in HTTP. We have to copy the
+        # headers dict so we can safely change it without those changes being
+        # reflected in anyone else's copy.
+        if self.scheme == "http":
+            headers = headers.copy()
+            headers.update(self.proxy_headers)
+    
+        # Must keep the exception bound to a separate variable or else Python 3
+        # complains about UnboundLocalError.
+        err = None
+    
+        # Keep track of whether we cleanly exited the except block. This
+        # ensures we do proper cleanup in finally.
+        clean_exit = False
+    
+        # Rewind body position, if needed. Record current position
+        # for future rewinds in the event of a redirect/retry.
+        body_pos = set_file_position(body, body_pos)
+    
+        try:
+            # Request a connection from the queue.
+            timeout_obj = self._get_timeout(timeout)
+            conn = self._get_conn(timeout=pool_timeout)
+    
+            conn.timeout = timeout_obj.connect_timeout
+    
+            is_new_proxy_conn = self.proxy is not None and not getattr(
+                conn, "sock", None
+            )
+            if is_new_proxy_conn:
+                self._prepare_proxy(conn)
+    
+            # Make the request on the httplib connection object.
+>           httplib_response = self._make_request(
+                conn,
+                method,
+                url,
+                timeout=timeout_obj,
+                body=body,
+                headers=headers,
+                chunked=chunked,
+            )
+
+env\lib\site-packages\urllib3\connectionpool.py:670: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connectionpool.HTTPConnectionPool object at 0x00000214D1476730>
+conn = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+method = 'POST', url = '/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'
+timeout = Timeout(connect=<object object at 0x00000214D006F210>, read=<object object at 0x00000214D006F210>, total=None)
+chunked = False
+httplib_request_kw = {'body': '{"url": "http://localhost/addressbook/"}', 'headers': {'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/3.141.0 (python windows)'}}
+timeout_obj = Timeout(connect=<object object at 0x00000214D006F210>, read=<object object at 0x00000214D006F210>, total=None)
+
+    def _make_request(
+        self, conn, method, url, timeout=_Default, chunked=False, **httplib_request_kw
+    ):
+        """
+        Perform a request on a given urllib connection object taken from our
+        pool.
+    
+        :param conn:
+            a connection from one of our connection pools
+    
+        :param timeout:
+            Socket timeout in seconds for the request. This can be a
+            float or integer, which will set the same timeout value for
+            the socket connect and the socket read, or an instance of
+            :class:`urllib3.util.Timeout`, which gives you more fine-grained
+            control over your timeouts.
+        """
+        self.num_requests += 1
+    
+        timeout_obj = self._get_timeout(timeout)
+        timeout_obj.start_connect()
+        conn.timeout = timeout_obj.connect_timeout
+    
+        # Trigger any extra validation we need to do.
+        try:
+            self._validate_conn(conn)
+        except (SocketTimeout, BaseSSLError) as e:
+            # Py2 raises this as a BaseSSLError, Py3 raises it as socket timeout.
+            self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)
+            raise
+    
+        # conn.request() calls httplib.*.request, not the method in
+        # urllib3.request. It also calls makefile (recv) on the socket.
+        if chunked:
+            conn.request_chunked(method, url, **httplib_request_kw)
+        else:
+>           conn.request(method, url, **httplib_request_kw)
+
+env\lib\site-packages\urllib3\connectionpool.py:392: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+method = 'POST', url = '/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'
+body = '{"url": "http://localhost/addressbook/"}'
+headers = {'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/3.141.0 (python windows)'}
+
+    def request(self, method, url, body=None, headers={}, *,
+                encode_chunked=False):
+        """Send a complete request to the server."""
+>       self._send_request(method, url, body, headers, encode_chunked)
+
+..\..\appdata\local\programs\python\python38\lib\http\client.py:1240: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+method = 'POST', url = '/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'
+body = b'{"url": "http://localhost/addressbook/"}'
+headers = {'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/3.141.0 (python windows)'}
+encode_chunked = False
+
+    def _send_request(self, method, url, body, headers, encode_chunked):
+        # Honor explicitly requested Host: and Accept-Encoding: headers.
+        header_names = frozenset(k.lower() for k in headers)
+        skips = {}
+        if 'host' in header_names:
+            skips['skip_host'] = 1
+        if 'accept-encoding' in header_names:
+            skips['skip_accept_encoding'] = 1
+    
+        self.putrequest(method, url, **skips)
+    
+        # chunked encoding will happen if HTTP/1.1 is used and either
+        # the caller passes encode_chunked=True or the following
+        # conditions hold:
+        # 1. content-length has not been explicitly set
+        # 2. the body is a file or iterable, but not a str or bytes-like
+        # 3. Transfer-Encoding has NOT been explicitly set by the caller
+    
+        if 'content-length' not in header_names:
+            # only chunk body if not explicitly set for backwards
+            # compatibility, assuming the client code is already handling the
+            # chunking
+            if 'transfer-encoding' not in header_names:
+                # if content-length cannot be automatically determined, fall
+                # back to chunked encoding
+                encode_chunked = False
+                content_length = self._get_content_length(body, method)
+                if content_length is None:
+                    if body is not None:
+                        if self.debuglevel > 0:
+                            print('Unable to determine size of %r' % body)
+                        encode_chunked = True
+                        self.putheader('Transfer-Encoding', 'chunked')
+                else:
+                    self.putheader('Content-Length', str(content_length))
+        else:
+            encode_chunked = False
+    
+        for hdr, value in headers.items():
+            self.putheader(hdr, value)
+        if isinstance(body, str):
+            # RFC 2616 Section 3.7.1 says that text default has a
+            # default charset of iso-8859-1.
+            body = _encode(body, 'body')
+>       self.endheaders(body, encode_chunked=encode_chunked)
+
+..\..\appdata\local\programs\python\python38\lib\http\client.py:1286: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+message_body = b'{"url": "http://localhost/addressbook/"}'
+
+    def endheaders(self, message_body=None, *, encode_chunked=False):
+        """Indicate that the last header line has been sent to the server.
+    
+        This method sends the request to the server.  The optional message_body
+        argument can be used to pass a message body associated with the
+        request.
+        """
+        if self.__state == _CS_REQ_STARTED:
+            self.__state = _CS_REQ_SENT
+        else:
+            raise CannotSendHeader()
+>       self._send_output(message_body, encode_chunked=encode_chunked)
+
+..\..\appdata\local\programs\python\python38\lib\http\client.py:1235: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+message_body = b'{"url": "http://localhost/addressbook/"}'
+encode_chunked = False
+
+    def _send_output(self, message_body=None, encode_chunked=False):
+        """Send the currently buffered request and clear the buffer.
+    
+        Appends an extra \\r\\n to the buffer.
+        A message_body may be specified, to be appended to the request.
+        """
+        self._buffer.extend((b"", b""))
+        msg = b"\r\n".join(self._buffer)
+        del self._buffer[:]
+>       self.send(msg)
+
+..\..\appdata\local\programs\python\python38\lib\http\client.py:1006: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+data = b'POST /session/bc989e5f-2868-49b7-8d07-6b98ec013018/url HTTP/1.1\r\nHost: 127.0.0.1:64704\r\nAccept-Encoding: identit...ype: application/json;charset=UTF-8\r\nUser-Agent: selenium/3.141.0 (python windows)\r\nConnection: keep-alive\r\n\r\n'
+
+    def send(self, data):
+        """Send `data' to the server.
+        ``data`` can be a string object, a bytes object, an array object, a
+        file-like object that supports a .read() method, or an iterable object.
+        """
+    
+        if self.sock is None:
+            if self.auto_open:
+>               self.connect()
+
+..\..\appdata\local\programs\python\python38\lib\http\client.py:946: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+
+    def connect(self):
+>       conn = self._new_conn()
+
+env\lib\site-packages\urllib3\connection.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+
+    def _new_conn(self):
+        """ Establish a socket connection and set nodelay settings on it.
+    
+        :return: New socket connection.
+        """
+        extra_kw = {}
+        if self.source_address:
+            extra_kw["source_address"] = self.source_address
+    
+        if self.socket_options:
+            extra_kw["socket_options"] = self.socket_options
+    
+        try:
+            conn = connection.create_connection(
+                (self._dns_host, self.port), self.timeout, **extra_kw
+            )
+    
+        except SocketTimeout:
+            raise ConnectTimeoutError(
+                self,
+                "Connection to %s timed out. (connect timeout=%s)"
+                % (self.host, self.timeout),
+            )
+    
+        except SocketError as e:
+>           raise NewConnectionError(
+                self, "Failed to establish a new connection: %s" % e
+            )
+E           urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000214D1491970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+env\lib\site-packages\urllib3\connection.py:171: NewConnectionError
+
+During handling of the above exception, another exception occurred:
+
+app = <application.Application object at 0x00000214D145ACA0>
+
+    def test_add_group(app):
+>       app.login(username="admin", password="secret")
+
+test_add_group.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+application.py:44: in login
+    self.open_home_page()
+application.py:55: in open_home_page
+    wd.get("http://localhost/addressbook/")
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:333: in get
+    self.execute(Command.GET, {'url': url})
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:319: in execute
+    response = self.command_executor.execute(driver_command, params)
+env\lib\site-packages\selenium\webdriver\remote\remote_connection.py:374: in execute
+    return self._request(command_info[0], url, body=data)
+env\lib\site-packages\selenium\webdriver\remote\remote_connection.py:397: in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+env\lib\site-packages\urllib3\request.py:79: in request
+    return self.request_encode_body(
+env\lib\site-packages\urllib3\request.py:171: in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+env\lib\site-packages\urllib3\poolmanager.py:336: in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+env\lib\site-packages\urllib3\connectionpool.py:754: in urlopen
+    return self.urlopen(
+env\lib\site-packages\urllib3\connectionpool.py:754: in urlopen
+    return self.urlopen(
+env\lib\site-packages\urllib3\connectionpool.py:754: in urlopen
+    return self.urlopen(
+env\lib\site-packages\urllib3\connectionpool.py:726: in urlopen
+    retries = retries.increment(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Retry(total=0, connect=None, read=None, redirect=None, status=None)
+method = 'POST', url = '/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'
+response = None
+error = NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000214D1491970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')
+_pool = <urllib3.connectionpool.HTTPConnectionPool object at 0x00000214D1476730>
+_stacktrace = <traceback object at 0x00000214D14BC3C0>
+
+    def increment(
+        self,
+        method=None,
+        url=None,
+        response=None,
+        error=None,
+        _pool=None,
+        _stacktrace=None,
+    ):
+        """ Return a new Retry object with incremented retry counters.
+    
+        :param response: A response object, or None, if the server did not
+            return a response.
+        :type response: :class:`~urllib3.response.HTTPResponse`
+        :param Exception error: An error encountered during the request, or
+            None if the response was received successfully.
+    
+        :return: A new ``Retry`` object.
+        """
+        if self.total is False and error:
+            # Disabled, indicate to re-raise the error.
+            raise six.reraise(type(error), error, _stacktrace)
+    
+        total = self.total
+        if total is not None:
+            total -= 1
+    
+        connect = self.connect
+        read = self.read
+        redirect = self.redirect
+        status_count = self.status
+        cause = "unknown"
+        status = None
+        redirect_location = None
+    
+        if error and self._is_connection_error(error):
+            # Connect retry?
+            if connect is False:
+                raise six.reraise(type(error), error, _stacktrace)
+            elif connect is not None:
+                connect -= 1
+    
+        elif error and self._is_read_error(error):
+            # Read retry?
+            if read is False or not self._is_method_retryable(method):
+                raise six.reraise(type(error), error, _stacktrace)
+            elif read is not None:
+                read -= 1
+    
+        elif response and response.get_redirect_location():
+            # Redirect retry?
+            if redirect is not None:
+                redirect -= 1
+            cause = "too many redirects"
+            redirect_location = response.get_redirect_location()
+            status = response.status
+    
+        else:
+            # Incrementing because of a server error like a 500 in
+            # status_forcelist and a the given method is in the whitelist
+            cause = ResponseError.GENERIC_ERROR
+            if response and response.status:
+                if status_count is not None:
+                    status_count -= 1
+                cause = ResponseError.SPECIFIC_ERROR.format(status_code=response.status)
+                status = response.status
+    
+        history = self.history + (
+            RequestHistory(method, url, error, status, redirect_location),
+        )
+    
+        new_retry = self.new(
+            total=total,
+            connect=connect,
+            read=read,
+            redirect=redirect,
+            status=status_count,
+            history=history,
+        )
+    
+        if new_retry.is_exhausted():
+>           raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E           urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=64704): Max retries exceeded with url: /session/bc989e5f-2868-49b7-8d07-6b98ec013018/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000214D1491970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+env\lib\site-packages\urllib3\util\retry.py:439: MaxRetryError
+
+test_add_group.py::test_add_group ERROR                                  [100%]
+test_add_group.py:13 (test_add_group)
+cls = <class '_pytest.runner.CallInfo'>
+func = <function call_runtest_hook.<locals>.<lambda> at 0x00000214D1644B80>
+when = 'teardown'
+reraise = (<class '_pytest.outcomes.Exit'>, <class 'KeyboardInterrupt'>)
+
+    @classmethod
+    def from_call(
+        cls,
+        func: "Callable[[], _T]",
+        when: "Literal['collect', 'setup', 'call', 'teardown']",
+        reraise: "Optional[Union[Type[BaseException], Tuple[Type[BaseException], ...]]]" = None,
+    ) -> "CallInfo[_T]":
+        excinfo = None
+        start = timing.time()
+        precise_start = timing.perf_counter()
+        try:
+>           result = func()  # type: Optional[_T]
+
+env\lib\site-packages\_pytest\runner.py:294: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+env\lib\site-packages\_pytest\runner.py:247: in <lambda>
+    lambda: ihook(item=item, **kwds), when=when, reraise=reraise
+env\lib\site-packages\pluggy\hooks.py:286: in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+env\lib\site-packages\pluggy\manager.py:93: in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+env\lib\site-packages\pluggy\manager.py:84: in <lambda>
+    self._inner_hookexec = lambda hook, methods, kwargs: hook.multicall(
+env\lib\site-packages\_pytest\runner.py:166: in pytest_runtest_teardown
+    item.session._setupstate.teardown_exact(item, nextitem)
+env\lib\site-packages\_pytest\runner.py:402: in teardown_exact
+    self._teardown_towards(needed_collectors)
+env\lib\site-packages\_pytest\runner.py:417: in _teardown_towards
+    raise exc
+env\lib\site-packages\_pytest\runner.py:410: in _teardown_towards
+    self._pop_and_teardown()
+env\lib\site-packages\_pytest\runner.py:370: in _pop_and_teardown
+    self._teardown_with_finalization(colitem)
+env\lib\site-packages\_pytest\runner.py:388: in _teardown_with_finalization
+    self._callfinalizers(colitem)
+env\lib\site-packages\_pytest\runner.py:385: in _callfinalizers
+    raise exc
+env\lib\site-packages\_pytest\runner.py:378: in _callfinalizers
+    fin()
+env\lib\site-packages\_pytest\fixtures.py:1023: in finish
+    raise exc
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <FixtureDef argname='app' scope='function' baseid='test_add_group.py'>
+request = <SubRequest 'app' for <Function test_add_group>>
+
+    def finish(self, request: SubRequest) -> None:
+        exc = None
+        try:
+            while self._finalizers:
+                try:
+                    func = self._finalizers.pop()
+>                   func()
+E                   TypeError: 'NoneType' object is not callable
+
+env\lib\site-packages\_pytest\fixtures.py:1016: TypeError
+
+
+=================================== ERRORS ====================================
+_____________________ ERROR at teardown of test_add_group _____________________
+
+cls = <class '_pytest.runner.CallInfo'>
+func = <function call_runtest_hook.<locals>.<lambda> at 0x00000214D1644B80>
+when = 'teardown'
+reraise = (<class '_pytest.outcomes.Exit'>, <class 'KeyboardInterrupt'>)
+
+    @classmethod
+    def from_call(
+        cls,
+        func: "Callable[[], _T]",
+        when: "Literal['collect', 'setup', 'call', 'teardown']",
+        reraise: "Optional[Union[Type[BaseException], Tuple[Type[BaseException], ...]]]" = None,
+    ) -> "CallInfo[_T]":
+        excinfo = None
+        start = timing.time()
+        precise_start = timing.perf_counter()
+        try:
+>           result = func()  # type: Optional[_T]
+
+env\lib\site-packages\_pytest\runner.py:294: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+env\lib\site-packages\_pytest\runner.py:247: in <lambda>
+    lambda: ihook(item=item, **kwds), when=when, reraise=reraise
+env\lib\site-packages\pluggy\hooks.py:286: in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+env\lib\site-packages\pluggy\manager.py:93: in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+env\lib\site-packages\pluggy\manager.py:84: in <lambda>
+    self._inner_hookexec = lambda hook, methods, kwargs: hook.multicall(
+env\lib\site-packages\_pytest\runner.py:166: in pytest_runtest_teardown
+    item.session._setupstate.teardown_exact(item, nextitem)
+env\lib\site-packages\_pytest\runner.py:402: in teardown_exact
+    self._teardown_towards(needed_collectors)
+env\lib\site-packages\_pytest\runner.py:417: in _teardown_towards
+    raise exc
+env\lib\site-packages\_pytest\runner.py:410: in _teardown_towards
+    self._pop_and_teardown()
+env\lib\site-packages\_pytest\runner.py:370: in _pop_and_teardown
+    self._teardown_with_finalization(colitem)
+env\lib\site-packages\_pytest\runner.py:388: in _teardown_with_finalization
+    self._callfinalizers(colitem)
+env\lib\site-packages\_pytest\runner.py:385: in _callfinalizers
+    raise exc
+env\lib\site-packages\_pytest\runner.py:378: in _callfinalizers
+    fin()
+env\lib\site-packages\_pytest\fixtures.py:1023: in finish
+    raise exc
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <FixtureDef argname='app' scope='function' baseid='test_add_group.py'>
+request = <SubRequest 'app' for <Function test_add_group>>
+
+    def finish(self, request: SubRequest) -> None:
+        exc = None
+        try:
+            while self._finalizers:
+                try:
+                    func = self._finalizers.pop()
+>                   func()
+E                   TypeError: 'NoneType' object is not callable
+
+env\lib\site-packages\_pytest\fixtures.py:1016: TypeError
+------------------------------ Captured log call ------------------------------
+WARNING  urllib3.connectionpool:connectionpool.py:751 Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000214D1491370>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/bc989e5f-2868-49b7-8d07-6b98ec013018/url
+WARNING  urllib3.connectionpool:connectionpool.py:751 Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000214D14911C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/bc989e5f-2868-49b7-8d07-6b98ec013018/url
+WARNING  urllib3.connectionpool:connectionpool.py:751 Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000214D14917F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/bc989e5f-2868-49b7-8d07-6b98ec013018/url
+================================== FAILURES ===================================
+_______________________________ test_add_group ________________________________
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+
+    def _new_conn(self):
+        """ Establish a socket connection and set nodelay settings on it.
+    
+        :return: New socket connection.
+        """
+        extra_kw = {}
+        if self.source_address:
+            extra_kw["source_address"] = self.source_address
+    
+        if self.socket_options:
+            extra_kw["socket_options"] = self.socket_options
+    
+        try:
+>           conn = connection.create_connection(
+                (self._dns_host, self.port), self.timeout, **extra_kw
+            )
+
+env\lib\site-packages\urllib3\connection.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+address = ('127.0.0.1', 64704), timeout = <object object at 0x00000214D006F210>
+source_address = None, socket_options = [(6, 1, 1)]
+
+    def create_connection(
+        address,
+        timeout=socket._GLOBAL_DEFAULT_TIMEOUT,
+        source_address=None,
+        socket_options=None,
+    ):
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        An host of '' or port 0 tells the OS to use the default.
+        """
+    
+        host, port = address
+        if host.startswith("["):
+            host = host.strip("[]")
+        err = None
+    
+        # Using the value from allowed_gai_family() in the context of getaddrinfo lets
+        # us select whether to work with IPv4 DNS records, IPv6 records, or both.
+        # The original create_connection function always returns all records.
+        family = allowed_gai_family()
+    
+        for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket.socket(af, socktype, proto)
+    
+                # If provided, set socket level options before connecting.
+                _set_socket_options(sock, socket_options)
+    
+                if timeout is not socket._GLOBAL_DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+                sock.connect(sa)
+                return sock
+    
+            except socket.error as e:
+                err = e
+                if sock is not None:
+                    sock.close()
+                    sock = None
+    
+        if err is not None:
+>           raise err
+
+env\lib\site-packages\urllib3\util\connection.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+address = ('127.0.0.1', 64704), timeout = <object object at 0x00000214D006F210>
+source_address = None, socket_options = [(6, 1, 1)]
+
+    def create_connection(
+        address,
+        timeout=socket._GLOBAL_DEFAULT_TIMEOUT,
+        source_address=None,
+        socket_options=None,
+    ):
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        An host of '' or port 0 tells the OS to use the default.
+        """
+    
+        host, port = address
+        if host.startswith("["):
+            host = host.strip("[]")
+        err = None
+    
+        # Using the value from allowed_gai_family() in the context of getaddrinfo lets
+        # us select whether to work with IPv4 DNS records, IPv6 records, or both.
+        # The original create_connection function always returns all records.
+        family = allowed_gai_family()
+    
+        for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket.socket(af, socktype, proto)
+    
+                # If provided, set socket level options before connecting.
+                _set_socket_options(sock, socket_options)
+    
+                if timeout is not socket._GLOBAL_DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+>               sock.connect(sa)
+E               ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+env\lib\site-packages\urllib3\util\connection.py:74: ConnectionRefusedError
+
+During handling of the above exception, another exception occurred:
+
+self = <urllib3.connectionpool.HTTPConnectionPool object at 0x00000214D1476730>
+method = 'POST', url = '/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'
+body = '{"url": "http://localhost/addressbook/"}'
+headers = {'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/3.141.0 (python windows)'}
+retries = Retry(total=0, connect=None, read=None, redirect=None, status=None)
+redirect = False, assert_same_host = False
+timeout = <object object at 0x00000214D12AF190>, pool_timeout = None
+release_conn = True, chunked = False, body_pos = None
+response_kw = {'request_url': 'http://127.0.0.1:64704/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'}
+conn = None, release_this_conn = True, err = None, clean_exit = False
+timeout_obj = Timeout(connect=<object object at 0x00000214D006F210>, read=<object object at 0x00000214D006F210>, total=None)
+is_new_proxy_conn = False
+
+    def urlopen(
+        self,
+        method,
+        url,
+        body=None,
+        headers=None,
+        retries=None,
+        redirect=True,
+        assert_same_host=True,
+        timeout=_Default,
+        pool_timeout=None,
+        release_conn=None,
+        chunked=False,
+        body_pos=None,
+        **response_kw
+    ):
+        """
+        Get a connection from the pool and perform an HTTP request. This is the
+        lowest level call for making a request, so you'll need to specify all
+        the raw details.
+    
+        .. note::
+    
+           More commonly, it's appropriate to use a convenience method provided
+           by :class:`.RequestMethods`, such as :meth:`request`.
+    
+        .. note::
+    
+           `release_conn` will only behave as expected if
+           `preload_content=False` because we want to make
+           `preload_content=False` the default behaviour someday soon without
+           breaking backwards compatibility.
+    
+        :param method:
+            HTTP request method (such as GET, POST, PUT, etc.)
+    
+        :param body:
+            Data to send in the request body (useful for creating
+            POST requests, see HTTPConnectionPool.post_url for
+            more convenience).
+    
+        :param headers:
+            Dictionary of custom headers to send, such as User-Agent,
+            If-None-Match, etc. If None, pool headers are used. If provided,
+            these headers completely replace any pool-specific headers.
+    
+        :param retries:
+            Configure the number of retries to allow before raising a
+            :class:`~urllib3.exceptions.MaxRetryError` exception.
+    
+            Pass ``None`` to retry until you receive a response. Pass a
+            :class:`~urllib3.util.retry.Retry` object for fine-grained control
+            over different types of retries.
+            Pass an integer number to retry connection errors that many times,
+            but no other types of errors. Pass zero to never retry.
+    
+            If ``False``, then retries are disabled and any exception is raised
+            immediately. Also, instead of raising a MaxRetryError on redirects,
+            the redirect response will be returned.
+    
+        :type retries: :class:`~urllib3.util.retry.Retry`, False, or an int.
+    
+        :param redirect:
+            If True, automatically handle redirects (status codes 301, 302,
+            303, 307, 308). Each redirect counts as a retry. Disabling retries
+            will disable redirect, too.
+    
+        :param assert_same_host:
+            If ``True``, will make sure that the host of the pool requests is
+            consistent else will raise HostChangedError. When False, you can
+            use the pool on an HTTP proxy and request foreign hosts.
+    
+        :param timeout:
+            If specified, overrides the default timeout for this one
+            request. It may be a float (in seconds) or an instance of
+            :class:`urllib3.util.Timeout`.
+    
+        :param pool_timeout:
+            If set and the pool is set to block=True, then this method will
+            block for ``pool_timeout`` seconds and raise EmptyPoolError if no
+            connection is available within the time period.
+    
+        :param release_conn:
+            If False, then the urlopen call will not release the connection
+            back into the pool once a response is received (but will release if
+            you read the entire contents of the response such as when
+            `preload_content=True`). This is useful if you're not preloading
+            the response's content immediately. You will need to call
+            ``r.release_conn()`` on the response ``r`` to return the connection
+            back into the pool. If None, it takes the value of
+            ``response_kw.get('preload_content', True)``.
+    
+        :param chunked:
+            If True, urllib3 will send the body using chunked transfer
+            encoding. Otherwise, urllib3 will send the body using the standard
+            content-length form. Defaults to False.
+    
+        :param int body_pos:
+            Position to seek to in file-like body in the event of a retry or
+            redirect. Typically this won't need to be set because urllib3 will
+            auto-populate the value when needed.
+    
+        :param \\**response_kw:
+            Additional parameters are passed to
+            :meth:`urllib3.response.HTTPResponse.from_httplib`
+        """
+        if headers is None:
+            headers = self.headers
+    
+        if not isinstance(retries, Retry):
+            retries = Retry.from_int(retries, redirect=redirect, default=self.retries)
+    
+        if release_conn is None:
+            release_conn = response_kw.get("preload_content", True)
+    
+        # Check host
+        if assert_same_host and not self.is_same_host(url):
+            raise HostChangedError(self, url, retries)
+    
+        # Ensure that the URL we're connecting to is properly encoded
+        if url.startswith("/"):
+            url = six.ensure_str(_encode_target(url))
+        else:
+            url = six.ensure_str(parse_url(url).url)
+    
+        conn = None
+    
+        # Track whether `conn` needs to be released before
+        # returning/raising/recursing. Update this variable if necessary, and
+        # leave `release_conn` constant throughout the function. That way, if
+        # the function recurses, the original value of `release_conn` will be
+        # passed down into the recursive call, and its value will be respected.
+        #
+        # See issue #651 [1] for details.
+        #
+        # [1] <https://github.com/urllib3/urllib3/issues/651>
+        release_this_conn = release_conn
+    
+        # Merge the proxy headers. Only do this in HTTP. We have to copy the
+        # headers dict so we can safely change it without those changes being
+        # reflected in anyone else's copy.
+        if self.scheme == "http":
+            headers = headers.copy()
+            headers.update(self.proxy_headers)
+    
+        # Must keep the exception bound to a separate variable or else Python 3
+        # complains about UnboundLocalError.
+        err = None
+    
+        # Keep track of whether we cleanly exited the except block. This
+        # ensures we do proper cleanup in finally.
+        clean_exit = False
+    
+        # Rewind body position, if needed. Record current position
+        # for future rewinds in the event of a redirect/retry.
+        body_pos = set_file_position(body, body_pos)
+    
+        try:
+            # Request a connection from the queue.
+            timeout_obj = self._get_timeout(timeout)
+            conn = self._get_conn(timeout=pool_timeout)
+    
+            conn.timeout = timeout_obj.connect_timeout
+    
+            is_new_proxy_conn = self.proxy is not None and not getattr(
+                conn, "sock", None
+            )
+            if is_new_proxy_conn:
+                self._prepare_proxy(conn)
+    
+            # Make the request on the httplib connection object.
+>           httplib_response = self._make_request(
+                conn,
+                method,
+                url,
+                timeout=timeout_obj,
+                body=body,
+                headers=headers,
+                chunked=chunked,
+            )
+
+env\lib\site-packages\urllib3\connectionpool.py:670: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connectionpool.HTTPConnectionPool object at 0x00000214D1476730>
+conn = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+method = 'POST', url = '/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'
+timeout = Timeout(connect=<object object at 0x00000214D006F210>, read=<object object at 0x00000214D006F210>, total=None)
+chunked = False
+httplib_request_kw = {'body': '{"url": "http://localhost/addressbook/"}', 'headers': {'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/3.141.0 (python windows)'}}
+timeout_obj = Timeout(connect=<object object at 0x00000214D006F210>, read=<object object at 0x00000214D006F210>, total=None)
+
+    def _make_request(
+        self, conn, method, url, timeout=_Default, chunked=False, **httplib_request_kw
+    ):
+        """
+        Perform a request on a given urllib connection object taken from our
+        pool.
+    
+        :param conn:
+            a connection from one of our connection pools
+    
+        :param timeout:
+            Socket timeout in seconds for the request. This can be a
+            float or integer, which will set the same timeout value for
+            the socket connect and the socket read, or an instance of
+            :class:`urllib3.util.Timeout`, which gives you more fine-grained
+            control over your timeouts.
+        """
+        self.num_requests += 1
+    
+        timeout_obj = self._get_timeout(timeout)
+        timeout_obj.start_connect()
+        conn.timeout = timeout_obj.connect_timeout
+    
+        # Trigger any extra validation we need to do.
+        try:
+            self._validate_conn(conn)
+        except (SocketTimeout, BaseSSLError) as e:
+            # Py2 raises this as a BaseSSLError, Py3 raises it as socket timeout.
+            self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)
+            raise
+    
+        # conn.request() calls httplib.*.request, not the method in
+        # urllib3.request. It also calls makefile (recv) on the socket.
+        if chunked:
+            conn.request_chunked(method, url, **httplib_request_kw)
+        else:
+>           conn.request(method, url, **httplib_request_kw)
+
+env\lib\site-packages\urllib3\connectionpool.py:392: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+method = 'POST', url = '/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'
+body = '{"url": "http://localhost/addressbook/"}'
+headers = {'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/3.141.0 (python windows)'}
+
+    def request(self, method, url, body=None, headers={}, *,
+                encode_chunked=False):
+        """Send a complete request to the server."""
+>       self._send_request(method, url, body, headers, encode_chunked)
+
+..\..\appdata\local\programs\python\python38\lib\http\client.py:1240: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+method = 'POST', url = '/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'
+body = b'{"url": "http://localhost/addressbook/"}'
+headers = {'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/3.141.0 (python windows)'}
+encode_chunked = False
+
+    def _send_request(self, method, url, body, headers, encode_chunked):
+        # Honor explicitly requested Host: and Accept-Encoding: headers.
+        header_names = frozenset(k.lower() for k in headers)
+        skips = {}
+        if 'host' in header_names:
+            skips['skip_host'] = 1
+        if 'accept-encoding' in header_names:
+            skips['skip_accept_encoding'] = 1
+    
+        self.putrequest(method, url, **skips)
+    
+        # chunked encoding will happen if HTTP/1.1 is used and either
+        # the caller passes encode_chunked=True or the following
+        # conditions hold:
+        # 1. content-length has not been explicitly set
+        # 2. the body is a file or iterable, but not a str or bytes-like
+        # 3. Transfer-Encoding has NOT been explicitly set by the caller
+    
+        if 'content-length' not in header_names:
+            # only chunk body if not explicitly set for backwards
+            # compatibility, assuming the client code is already handling the
+            # chunking
+            if 'transfer-encoding' not in header_names:
+                # if content-length cannot be automatically determined, fall
+                # back to chunked encoding
+                encode_chunked = False
+                content_length = self._get_content_length(body, method)
+                if content_length is None:
+                    if body is not None:
+                        if self.debuglevel > 0:
+                            print('Unable to determine size of %r' % body)
+                        encode_chunked = True
+                        self.putheader('Transfer-Encoding', 'chunked')
+                else:
+                    self.putheader('Content-Length', str(content_length))
+        else:
+            encode_chunked = False
+    
+        for hdr, value in headers.items():
+            self.putheader(hdr, value)
+        if isinstance(body, str):
+            # RFC 2616 Section 3.7.1 says that text default has a
+            # default charset of iso-8859-1.
+            body = _encode(body, 'body')
+>       self.endheaders(body, encode_chunked=encode_chunked)
+
+..\..\appdata\local\programs\python\python38\lib\http\client.py:1286: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+message_body = b'{"url": "http://localhost/addressbook/"}'
+
+    def endheaders(self, message_body=None, *, encode_chunked=False):
+        """Indicate that the last header line has been sent to the server.
+    
+        This method sends the request to the server.  The optional message_body
+        argument can be used to pass a message body associated with the
+        request.
+        """
+        if self.__state == _CS_REQ_STARTED:
+            self.__state = _CS_REQ_SENT
+        else:
+            raise CannotSendHeader()
+>       self._send_output(message_body, encode_chunked=encode_chunked)
+
+..\..\appdata\local\programs\python\python38\lib\http\client.py:1235: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+message_body = b'{"url": "http://localhost/addressbook/"}'
+encode_chunked = False
+
+    def _send_output(self, message_body=None, encode_chunked=False):
+        """Send the currently buffered request and clear the buffer.
+    
+        Appends an extra \\r\\n to the buffer.
+        A message_body may be specified, to be appended to the request.
+        """
+        self._buffer.extend((b"", b""))
+        msg = b"\r\n".join(self._buffer)
+        del self._buffer[:]
+>       self.send(msg)
+
+..\..\appdata\local\programs\python\python38\lib\http\client.py:1006: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+data = b'POST /session/bc989e5f-2868-49b7-8d07-6b98ec013018/url HTTP/1.1\r\nHost: 127.0.0.1:64704\r\nAccept-Encoding: identit...ype: application/json;charset=UTF-8\r\nUser-Agent: selenium/3.141.0 (python windows)\r\nConnection: keep-alive\r\n\r\n'
+
+    def send(self, data):
+        """Send `data' to the server.
+        ``data`` can be a string object, a bytes object, an array object, a
+        file-like object that supports a .read() method, or an iterable object.
+        """
+    
+        if self.sock is None:
+            if self.auto_open:
+>               self.connect()
+
+..\..\appdata\local\programs\python\python38\lib\http\client.py:946: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+
+    def connect(self):
+>       conn = self._new_conn()
+
+env\lib\site-packages\urllib3\connection.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <urllib3.connection.HTTPConnection object at 0x00000214D1491970>
+
+    def _new_conn(self):
+        """ Establish a socket connection and set nodelay settings on it.
+    
+        :return: New socket connection.
+        """
+        extra_kw = {}
+        if self.source_address:
+            extra_kw["source_address"] = self.source_address
+    
+        if self.socket_options:
+            extra_kw["socket_options"] = self.socket_options
+    
+        try:
+            conn = connection.create_connection(
+                (self._dns_host, self.port), self.timeout, **extra_kw
+            )
+    
+        except SocketTimeout:
+            raise ConnectTimeoutError(
+                self,
+                "Connection to %s timed out. (connect timeout=%s)"
+                % (self.host, self.timeout),
+            )
+    
+        except SocketError as e:
+>           raise NewConnectionError(
+                self, "Failed to establish a new connection: %s" % e
+            )
+E           urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000214D1491970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+env\lib\site-packages\urllib3\connection.py:171: NewConnectionError
+
+During handling of the above exception, another exception occurred:
+
+app = <application.Application object at 0x00000214D145ACA0>
+
+    def test_add_group(app):
+>       app.login(username="admin", password="secret")
+
+test_add_group.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+application.py:44: in login
+    self.open_home_page()
+application.py:55: in open_home_page
+    wd.get("http://localhost/addressbook/")
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:333: in get
+    self.execute(Command.GET, {'url': url})
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:319: in execute
+    response = self.command_executor.execute(driver_command, params)
+env\lib\site-packages\selenium\webdriver\remote\remote_connection.py:374: in execute
+    return self._request(command_info[0], url, body=data)
+env\lib\site-packages\selenium\webdriver\remote\remote_connection.py:397: in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+env\lib\site-packages\urllib3\request.py:79: in request
+    return self.request_encode_body(
+env\lib\site-packages\urllib3\request.py:171: in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+env\lib\site-packages\urllib3\poolmanager.py:336: in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+env\lib\site-packages\urllib3\connectionpool.py:754: in urlopen
+    return self.urlopen(
+env\lib\site-packages\urllib3\connectionpool.py:754: in urlopen
+    return self.urlopen(
+env\lib\site-packages\urllib3\connectionpool.py:754: in urlopen
+    return self.urlopen(
+env\lib\site-packages\urllib3\connectionpool.py:726: in urlopen
+    retries = retries.increment(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Retry(total=0, connect=None, read=None, redirect=None, status=None)
+method = 'POST', url = '/session/bc989e5f-2868-49b7-8d07-6b98ec013018/url'
+response = None
+error = NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000214D1491970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')
+_pool = <urllib3.connectionpool.HTTPConnectionPool object at 0x00000214D1476730>
+_stacktrace = <traceback object at 0x00000214D14BC3C0>
+
+    def increment(
+        self,
+        method=None,
+        url=None,
+        response=None,
+        error=None,
+        _pool=None,
+        _stacktrace=None,
+    ):
+        """ Return a new Retry object with incremented retry counters.
+    
+        :param response: A response object, or None, if the server did not
+            return a response.
+        :type response: :class:`~urllib3.response.HTTPResponse`
+        :param Exception error: An error encountered during the request, or
+            None if the response was received successfully.
+    
+        :return: A new ``Retry`` object.
+        """
+        if self.total is False and error:
+            # Disabled, indicate to re-raise the error.
+            raise six.reraise(type(error), error, _stacktrace)
+    
+        total = self.total
+        if total is not None:
+            total -= 1
+    
+        connect = self.connect
+        read = self.read
+        redirect = self.redirect
+        status_count = self.status
+        cause = "unknown"
+        status = None
+        redirect_location = None
+    
+        if error and self._is_connection_error(error):
+            # Connect retry?
+            if connect is False:
+                raise six.reraise(type(error), error, _stacktrace)
+            elif connect is not None:
+                connect -= 1
+    
+        elif error and self._is_read_error(error):
+            # Read retry?
+            if read is False or not self._is_method_retryable(method):
+                raise six.reraise(type(error), error, _stacktrace)
+            elif read is not None:
+                read -= 1
+    
+        elif response and response.get_redirect_location():
+            # Redirect retry?
+            if redirect is not None:
+                redirect -= 1
+            cause = "too many redirects"
+            redirect_location = response.get_redirect_location()
+            status = response.status
+    
+        else:
+            # Incrementing because of a server error like a 500 in
+            # status_forcelist and a the given method is in the whitelist
+            cause = ResponseError.GENERIC_ERROR
+            if response and response.status:
+                if status_count is not None:
+                    status_count -= 1
+                cause = ResponseError.SPECIFIC_ERROR.format(status_code=response.status)
+                status = response.status
+    
+        history = self.history + (
+            RequestHistory(method, url, error, status, redirect_location),
+        )
+    
+        new_retry = self.new(
+            total=total,
+            connect=connect,
+            read=read,
+            redirect=redirect,
+            status=status_count,
+            history=history,
+        )
+    
+        if new_retry.is_exhausted():
+>           raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E           urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=64704): Max retries exceeded with url: /session/bc989e5f-2868-49b7-8d07-6b98ec013018/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000214D1491970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+env\lib\site-packages\urllib3\util\retry.py:439: MaxRetryError
+------------------------------ Captured log call ------------------------------
+WARNING  urllib3.connectionpool:connectionpool.py:751 Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000214D1491370>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/bc989e5f-2868-49b7-8d07-6b98ec013018/url
+WARNING  urllib3.connectionpool:connectionpool.py:751 Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000214D14911C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/bc989e5f-2868-49b7-8d07-6b98ec013018/url
+WARNING  urllib3.connectionpool:connectionpool.py:751 Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000214D14917F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/bc989e5f-2868-49b7-8d07-6b98ec013018/url
+=========================== short test summary info ===========================
+FAILED test_add_group.py::test_add_group - urllib3.exceptions.MaxRetryError: ...
+ERROR test_add_group.py::test_add_group - TypeError: 'NoneType' object is not...
+========================= 1 failed, 1 error in 19.29s =========================
+
+Process finished with exit code 1
+
+Assertion failed
+
+Assertion failed
