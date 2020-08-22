@@ -29,15 +29,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36c426b6-83a5-4ac3-8f08-6301e57081cf" name="Default Changelist" comment="Add new contact test was created &#10;New class Contact was added">
-      <change afterPath="$PROJECT_DIR$/fixture/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fixture/session.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/group.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_add_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_add_group.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_add_new_contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_add_new_contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fixture/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_add_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_add_group.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_add_new_contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_add_new_contact.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +73,7 @@
       <recent name="C:\Users\averchak\PycharmProjects\python_training\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_add_new_contact.py">
+  <component name="RunManager" selected="Python tests.pytest in tests">
     <configuration name="pytest in test_add_group.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,8 +106,25 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in tests" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="python_training" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in tests" />
         <item itemvalue="Python tests.pytest in test_add_new_contact.py" />
         <item itemvalue="Python tests.pytest in test_add_group.py" />
       </list>
@@ -192,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598076747273</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="packages for different zones of responsibilities where created; tests where organised">
+      <created>1598079805139</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1598079805139</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,7 +249,8 @@
     <MESSAGE value="Fixture was added" />
     <MESSAGE value="error log" />
     <MESSAGE value="errors with fixture.destroy where fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="errors with fixture.destroy where fixed" />
+    <MESSAGE value="packages for different zones of responsibilities where created; tests where organised" />
+    <option name="LAST_COMMIT_MESSAGE" value="packages for different zones of responsibilities where created; tests where organised" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="383" key="#Notifications" timestamp="1597566975716">
@@ -244,22 +265,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="827" y="270" key="EnvironmentVariablesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591394131" />
-    <state width="1899" height="334" key="GridCell.Tab.0.bottom" timestamp="1598076667578">
+    <state width="1899" height="324" key="GridCell.Tab.0.bottom" timestamp="1598080400039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598076667578" />
-    <state width="1899" height="334" key="GridCell.Tab.0.center" timestamp="1598076667578">
+    <state width="1899" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598080400039" />
+    <state width="1899" height="324" key="GridCell.Tab.0.center" timestamp="1598080400039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="334" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598076667578" />
-    <state width="1899" height="334" key="GridCell.Tab.0.left" timestamp="1598076667576">
+    <state width="1899" height="324" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598080400039" />
+    <state width="1899" height="324" key="GridCell.Tab.0.left" timestamp="1598080400039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="334" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598076667576" />
-    <state width="1899" height="334" key="GridCell.Tab.0.right" timestamp="1598076667578">
+    <state width="1899" height="324" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598080400039" />
+    <state width="1899" height="324" key="GridCell.Tab.0.right" timestamp="1598080400039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="334" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598076667578" />
+    <state width="1899" height="324" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598080400039" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1598079431112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
