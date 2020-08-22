@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -26,8 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36c426b6-83a5-4ac3-8f08-6301e57081cf" name="Default Changelist" comment="Add new contact test was created &#10;New class Contact was added">
-      <change afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_add_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_add_group.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_add_new_contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_add_new_contact.py" afterDir="false" />
     </list>
@@ -60,9 +63,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_add_group.py">
+  <component name="RunManager" selected="Python tests.pytest in test_add_new_contact.py">
     <configuration name="pytest in test_add_group.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,8 +100,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest in test_add_group.py" />
         <item itemvalue="Python tests.pytest in test_add_new_contact.py" />
+        <item itemvalue="Python tests.pytest in test_add_group.py" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +159,21 @@
       <option name="project" value="LOCAL" />
       <updated>1597593967125</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixture was added">
+      <created>1598021163500</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1598021163500</updated>
+    </task>
+    <task id="LOCAL-00008" summary="error log">
+      <created>1598022693151</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1598022693151</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,7 +207,9 @@
     <MESSAGE value="First test was created;" />
     <MESSAGE value="Group class was created &#10;Add group test was updated according to homework requirements" />
     <MESSAGE value="Add new contact test was created &#10;New class Contact was added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new contact test was created &#10;New class Contact was added" />
+    <MESSAGE value="Fixture was added" />
+    <MESSAGE value="error log" />
+    <option name="LAST_COMMIT_MESSAGE" value="error log" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="383" key="#Notifications" timestamp="1597566975716">
@@ -205,30 +224,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="827" y="270" key="EnvironmentVariablesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591394131" />
-    <state width="1899" height="368" key="GridCell.Tab.0.bottom" timestamp="1598020512464">
+    <state width="1899" height="334" key="GridCell.Tab.0.bottom" timestamp="1598076667578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="368" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598020512464" />
-    <state width="1899" height="368" key="GridCell.Tab.0.center" timestamp="1598020512463">
+    <state width="1899" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598076667578" />
+    <state width="1899" height="334" key="GridCell.Tab.0.center" timestamp="1598076667578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="368" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598020512463" />
-    <state width="1899" height="368" key="GridCell.Tab.0.left" timestamp="1598020512463">
+    <state width="1899" height="334" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598076667578" />
+    <state width="1899" height="334" key="GridCell.Tab.0.left" timestamp="1598076667576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="368" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598020512463" />
-    <state width="1899" height="368" key="GridCell.Tab.0.right" timestamp="1598020512463">
+    <state width="1899" height="334" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598076667576" />
+    <state width="1899" height="334" key="GridCell.Tab.0.right" timestamp="1598076667578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="368" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598020512463" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1598019211029">
+    <state width="1899" height="334" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598076667578" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1598022281191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598019211029" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1597593983573">
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598022281191" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1598022703413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597593983573" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598022703413" />
     <state x="645" y="308" key="git4idea.merge.GitPullDialog" timestamp="1597593931928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
