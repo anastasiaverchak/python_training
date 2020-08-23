@@ -1,7 +1,8 @@
 from selenium.webdriver.support.ui import Select
 
+
 class ContactHelper:
-    def __init__(self,app):
+    def __init__(self, app):
         self.app = app
 
     def add(self, contact):
