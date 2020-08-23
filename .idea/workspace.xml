@@ -29,7 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36c426b6-83a5-4ac3-8f08-6301e57081cf" name="Default Changelist" comment="Add new contact test was created &#10;New class Contact was added">
-      <change afterPath="$PROJECT_DIR$/fixture/session.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fixture/contact.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fixture/group.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_add_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_add_group.py" afterDir="false" />
@@ -212,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598079805139</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="SessionHelper for the session control was created">
+      <created>1598080496246</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1598080496246</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,7 +258,8 @@
     <MESSAGE value="error log" />
     <MESSAGE value="errors with fixture.destroy where fixed" />
     <MESSAGE value="packages for different zones of responsibilities where created; tests where organised" />
-    <option name="LAST_COMMIT_MESSAGE" value="packages for different zones of responsibilities where created; tests where organised" />
+    <MESSAGE value="SessionHelper for the session control was created" />
+    <option name="LAST_COMMIT_MESSAGE" value="SessionHelper for the session control was created" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="383" key="#Notifications" timestamp="1597566975716">
@@ -265,22 +274,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="827" y="270" key="EnvironmentVariablesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591394131" />
-    <state width="1899" height="324" key="GridCell.Tab.0.bottom" timestamp="1598080400039">
+    <state width="1899" height="324" key="GridCell.Tab.0.bottom" timestamp="1598189595512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598080400039" />
-    <state width="1899" height="324" key="GridCell.Tab.0.center" timestamp="1598080400039">
+    <state width="1899" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598189595512" />
+    <state width="1899" height="324" key="GridCell.Tab.0.center" timestamp="1598189595512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="324" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598080400039" />
-    <state width="1899" height="324" key="GridCell.Tab.0.left" timestamp="1598080400039">
+    <state width="1899" height="324" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598189595512" />
+    <state width="1899" height="324" key="GridCell.Tab.0.left" timestamp="1598189595511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="324" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598080400039" />
-    <state width="1899" height="324" key="GridCell.Tab.0.right" timestamp="1598080400039">
+    <state width="1899" height="324" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598189595511" />
+    <state width="1899" height="324" key="GridCell.Tab.0.right" timestamp="1598189595512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="324" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598080400039" />
+    <state width="1899" height="324" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598189595512" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1598079431112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
