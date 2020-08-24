@@ -8,6 +8,12 @@ class ContactHelper:
     def add(self, contact):
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
+        self.fill_form(contact)
+        wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
+        self.app.open_home_page()
+
+    def fill_form(self, contact):
+        wd = self.app.wd
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.firstname)
@@ -43,7 +49,7 @@ class ContactHelper:
         wd.find_element_by_name("fax").click()
         wd.find_element_by_name("fax").clear()
         wd.find_element_by_name("fax").send_keys(contact.fax)
-        wd.find_element_by_name("theform").click()
+        #wd.find_element_by_name("theform").click()
         wd.find_element_by_name("email").click()
         wd.find_element_by_name("email").clear()
         wd.find_element_by_name("email").send_keys(contact.email)
@@ -83,8 +89,6 @@ class ContactHelper:
         wd.find_element_by_name("notes").click()
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(contact.notes)
-        wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
-        self.app.open_home_page()
 
     def delete_first_contact(self):
         wd = self.app.wd
@@ -95,15 +99,13 @@ class ContactHelper:
         wd.switch_to_alert().accept()
         wd.find_element_by_xpath("//input[contains(@value,'Delete')]")
 
-    def edit_first_contact(self):
+    def edit_first_contact(self, contact):
         wd = self.app.wd
         #select first contact
         wd.find_element_by_name("selected[]").click()
         #submit deletion
         wd.find_element_by_xpath("//img[contains(@title,'Edit')]").click()
         #update
-        wd.find_element_by_name("firstname").click()
-        wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys("updated firstname")
+        self.fill_form(contact)
         wd.find_element_by_name("update").click()
         self.app.open_home_page()
