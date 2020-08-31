@@ -75,4 +75,5 @@ class ContactHelper:
 
     def count(self):
         wd = self.app.wd
+        wd.find_element_by_xpath("//a[contains(text(),'home')]").click()
         return len(wd.find_elements_by_name("selected[]"))
