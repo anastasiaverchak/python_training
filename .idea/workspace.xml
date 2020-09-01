@@ -30,7 +30,7 @@
   <component name="ChangeListManager">
     <list default="true" id="36c426b6-83a5-4ac3-8f08-6301e57081cf" name="Default Changelist" comment="Add new contact test was created &#10;New class Contact was added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fixture/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fixture/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/contact.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/group.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/group.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -301,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598634525888</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Task 9.1">
+      <created>1598872638044</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1598872638044</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,7 +354,8 @@
     <MESSAGE value="fill form methods were extracted as separated methods" />
     <MESSAGE value="Task 8" />
     <MESSAGE value="Task 9" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task 9" />
+    <MESSAGE value="Task 9.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task 9.1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="383" key="#Notifications" timestamp="1597566975716">
@@ -366,22 +374,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="827" y="270" key="EnvironmentVariablesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591394131" />
-    <state width="1899" height="324" key="GridCell.Tab.0.bottom" timestamp="1598868597482">
+    <state width="1899" height="217" key="GridCell.Tab.0.bottom" timestamp="1598949917508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598868597482" />
-    <state width="1899" height="324" key="GridCell.Tab.0.center" timestamp="1598868597482">
+    <state width="1899" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598949917508" />
+    <state width="1899" height="217" key="GridCell.Tab.0.center" timestamp="1598949917507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="324" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598868597482" />
-    <state width="1899" height="324" key="GridCell.Tab.0.left" timestamp="1598868597481">
+    <state width="1899" height="217" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598949917507" />
+    <state width="1899" height="217" key="GridCell.Tab.0.left" timestamp="1598949917506">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="324" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598868597481" />
-    <state width="1899" height="324" key="GridCell.Tab.0.right" timestamp="1598868597482">
+    <state width="1899" height="217" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598949917506" />
+    <state width="1899" height="217" key="GridCell.Tab.0.right" timestamp="1598949917507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="324" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598868597482" />
+    <state width="1899" height="217" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598949917507" />
     <state width="1899" height="268" key="GridCell.Tab.1.bottom" timestamp="1598641557314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -402,10 +410,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598079431112" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1598634534826">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1598872807786">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598634534826" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598872807786" />
     <state x="645" y="308" key="git4idea.merge.GitPullDialog" timestamp="1597593931928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -434,11 +442,6 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fixture/contact.py</url>
-          <line>62</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests/test_edit_first_contact.py</url>
           <line>1</line>
           <option name="timeStamp" value="9" />
@@ -462,31 +465,6 @@
           <url>file://$PROJECT_DIR$/tests/test_edit_first_contact.py</url>
           <line>5</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fixture/contact.py</url>
-          <line>58</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fixture/contact.py</url>
-          <line>60</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fixture/contact.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fixture/contact.py</url>
-          <line>65</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fixture/contact.py</url>
-          <line>66</line>
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests/test_add_group.py</url>

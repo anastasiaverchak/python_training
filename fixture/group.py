@@ -37,7 +37,12 @@ class GroupHelper:
         #submit deletion
         wd.find_element_by_name("delete").click()
         self.open_group_page()
-        wd.find_element_by_xpath("//a[contains(text(),'home')]").click()
+        self.open_home_page()
+
+    def open_home_page(self):
+        wd = self.app.wd
+        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_xpath("//form[@name='MainForm']//div[1]//input[1]")) >0):
+            wd.find_element_by_xpath("//a[contains(text(),'home')]").click()
 
     def select_first_group(self):
         wd = self.app.wd
