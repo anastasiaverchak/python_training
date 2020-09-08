@@ -32,7 +32,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/contact.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/group.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/group.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_add_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_add_group.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_del_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_del_group.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_delete_first_contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_delete_first_contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_edit_first_contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_edit_first_contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_edit_first_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_edit_first_group.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,23 +76,7 @@
       <recent name="C:\Users\averchak\PycharmProjects\python_training\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_add_new_contact.test_add_new_contact">
-    <configuration name="pytest for test_add_group.test_add_group" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="python_training" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_add_group.test_add_group&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.pytest for test_delete_first_contact.test_delete_random_contact">
     <configuration name="pytest for test_add_new_contact.test_add_new_contact" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,7 +93,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_delete_first_contact.test_delete_first_contact" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_del_group.test_delete_random_group" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -118,11 +105,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_delete_first_contact.test_delete_first_contact&quot;" />
+      <option name="_new_target" value="&quot;test_del_group.test_delete_random_group&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_add_new_contact.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_delete_first_contact.test_delete_random_contact" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -134,11 +121,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_add_new_contact.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_delete_first_contact.test_delete_random_contact&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_edit_first_contact.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_edit_first_contact.test_edit_firstname" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,17 +137,33 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_edit_first_contact.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_edit_first_contact.test_edit_firstname&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_edit_first_group.test_modify_group_name" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="python_training" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_edit_first_group.test_modify_group_name&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_delete_first_contact.test_delete_random_contact" />
+        <item itemvalue="Python tests.pytest for test_edit_first_contact.test_edit_firstname" />
+        <item itemvalue="Python tests.pytest for test_edit_first_group.test_modify_group_name" />
+        <item itemvalue="Python tests.pytest for test_del_group.test_delete_random_group" />
         <item itemvalue="Python tests.pytest for test_add_new_contact.test_add_new_contact" />
-        <item itemvalue="Python tests.pytest for test_add_group.test_add_group" />
-        <item itemvalue="Python tests.pytest in test_edit_first_contact.py" />
-        <item itemvalue="Python tests.pytest for test_delete_first_contact.test_delete_first_contact" />
-        <item itemvalue="Python tests.pytest in test_add_new_contact.py" />
       </list>
     </recent_temporary>
   </component>
@@ -337,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599568896684</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="task 12">
+      <created>1599571011496</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1599571011496</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -387,7 +397,8 @@
     <MESSAGE value="asserts were added" />
     <MESSAGE value="asserts ver 2 were added" />
     <MESSAGE value="task 11" />
-    <option name="LAST_COMMIT_MESSAGE" value="task 11" />
+    <MESSAGE value="task 12" />
+    <option name="LAST_COMMIT_MESSAGE" value="task 12" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="383" key="#Notifications" timestamp="1597566975716">
@@ -410,22 +421,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="827" y="270" key="EnvironmentVariablesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591394131" />
-    <state width="1899" height="247" key="GridCell.Tab.0.bottom" timestamp="1599570910704">
+    <state width="1899" height="247" key="GridCell.Tab.0.bottom" timestamp="1599587760949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599570910704" />
-    <state width="1899" height="247" key="GridCell.Tab.0.center" timestamp="1599570910704">
+    <state width="1899" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599587760949" />
+    <state width="1899" height="247" key="GridCell.Tab.0.center" timestamp="1599587760949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="247" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599570910704" />
-    <state width="1899" height="247" key="GridCell.Tab.0.left" timestamp="1599570910704">
+    <state width="1899" height="247" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599587760949" />
+    <state width="1899" height="247" key="GridCell.Tab.0.left" timestamp="1599587760949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="247" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599570910704" />
-    <state width="1899" height="247" key="GridCell.Tab.0.right" timestamp="1599570910704">
+    <state width="1899" height="247" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599587760949" />
+    <state width="1899" height="247" key="GridCell.Tab.0.right" timestamp="1599587760949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="247" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599570910704" />
+    <state width="1899" height="247" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599587760949" />
     <state width="1899" height="268" key="GridCell.Tab.1.bottom" timestamp="1598641557314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -442,14 +453,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="268" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598641557313" />
+    <state x="775" y="453" key="ReplaceDuplicatesPrompt" timestamp="1599572985695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="775" y="453" key="ReplaceDuplicatesPrompt/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599572985695" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1598079431112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598079431112" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599568904999">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599571022715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599568904999" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599571022715" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599488867975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -473,42 +488,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fixture/group.py</url>
-          <line>41</line>
+          <line>44</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fixture/group.py</url>
-          <line>40</line>
+          <line>43</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/test_edit_first_contact.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/test_edit_first_contact.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/test_edit_first_contact.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/test_edit_first_contact.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/test_edit_first_contact.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fixture/group.py</url>
-          <line>42</line>
+          <line>45</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
