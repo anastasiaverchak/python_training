@@ -12,6 +12,7 @@ class ContactHelper:
         self.fill_form(contact)
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         self.app.open_home_page()
+        self.contacts_cache = None
 
     def fill_form(self, contact):
         wd = self.app.wd
@@ -66,6 +67,7 @@ class ContactHelper:
         self.fill_form(contact)
         wd.find_element_by_name("update").click()
         self.app.open_home_page()
+        self.contacts_cache = None
 
     def change_field_value(self, field_name, text):
         wd = self.app.wd
@@ -84,14 +86,17 @@ class ContactHelper:
         if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_xpath("//form[@name='MainForm']//div[1]//input[1]")) >0):
             wd.find_element_by_xpath("//a[contains(text(),'home')]").click()
 
+    contacts_cache = None
+
     def get_contact_list(self):
-        wd = self.app.wd
-        self.open_home_page()
-        contacts = []
-        for element in wd.find_elements_by_xpath("//tr[contains(@name,'entry')]"):
-            cells = element.find_elements_by_tag_name("td")
-            lastname = cells[1].text
-            firstname = cells[2].text
-            id = element.find_element_by_name("selected[]").get_attribute("value")
-            contacts.append(Contact(lastname = lastname, firstname= firstname, id = id))
-        return contacts
+        if self.contacts_cache is None:
+            wd = self.app.wd
+            self.open_home_page()
+            self.contacts_cache = []
+            for element in wd.find_elements_by_xpath("//tr[contains(@name,'entry')]"):
+                cells = element.find_elements_by_tag_name("td")
+                lastname = cells[1].text
+                firstname = cells[2].text
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                self.contacts_cache.append(Contact(lastname = lastname, firstname= firstname, id = id))
+        return list(self.contacts_cache)
