@@ -70,9 +70,9 @@ class ContactHelper:
     def edit_contact_by_index(self, contact, index):
         wd = self.app.wd
         #select first contact
-        self.select_contact_by_index(index)
-        #submit deletion
-        wd.find_element_by_xpath("//img[contains(@title,'Edit')]").click()
+        #self.select_contact_by_index(index)
+        #submit editing
+        wd.find_elements_by_xpath("//img[contains(@title,'Edit')]")[index].click()
         #update
         self.fill_form(contact)
         wd.find_element_by_name("update").click()

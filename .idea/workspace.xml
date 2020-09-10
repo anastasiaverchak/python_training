@@ -31,11 +31,6 @@
     <list default="true" id="36c426b6-83a5-4ac3-8f08-6301e57081cf" name="Default Changelist" comment="Add new contact test was created &#10;New class Contact was added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fixture/group.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/group.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_del_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_del_group.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_delete_first_contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_delete_first_contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_edit_first_contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_edit_first_contact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_edit_first_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_edit_first_group.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +71,7 @@
       <recent name="C:\Users\averchak\PycharmProjects\python_training\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_delete_first_contact.test_delete_random_contact">
+  <component name="RunManager" selected="Python tests.pytest for test_edit_first_contact.test_edit_firstname">
     <configuration name="pytest for test_add_new_contact.test_add_new_contact" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,8 +154,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_delete_first_contact.test_delete_random_contact" />
         <item itemvalue="Python tests.pytest for test_edit_first_contact.test_edit_firstname" />
+        <item itemvalue="Python tests.pytest for test_delete_first_contact.test_delete_random_contact" />
         <item itemvalue="Python tests.pytest for test_edit_first_group.test_modify_group_name" />
         <item itemvalue="Python tests.pytest for test_del_group.test_delete_random_group" />
         <item itemvalue="Python tests.pytest for test_add_new_contact.test_add_new_contact" />
@@ -347,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599571011496</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="task 13">
+      <created>1599588364741</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1599588364741</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -398,7 +400,8 @@
     <MESSAGE value="asserts ver 2 were added" />
     <MESSAGE value="task 11" />
     <MESSAGE value="task 12" />
-    <option name="LAST_COMMIT_MESSAGE" value="task 12" />
+    <MESSAGE value="task 13" />
+    <option name="LAST_COMMIT_MESSAGE" value="task 13" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="383" key="#Notifications" timestamp="1597566975716">
@@ -421,22 +424,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="827" y="270" key="EnvironmentVariablesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591394131" />
-    <state width="1899" height="247" key="GridCell.Tab.0.bottom" timestamp="1599587760949">
+    <state width="1899" height="247" key="GridCell.Tab.0.bottom" timestamp="1599717536463">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599587760949" />
-    <state width="1899" height="247" key="GridCell.Tab.0.center" timestamp="1599587760949">
+    <state width="1899" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599717536463" />
+    <state width="1899" height="247" key="GridCell.Tab.0.center" timestamp="1599717536462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="247" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599587760949" />
-    <state width="1899" height="247" key="GridCell.Tab.0.left" timestamp="1599587760949">
+    <state width="1899" height="247" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599717536462" />
+    <state width="1899" height="247" key="GridCell.Tab.0.left" timestamp="1599717536461">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="247" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599587760949" />
-    <state width="1899" height="247" key="GridCell.Tab.0.right" timestamp="1599587760949">
+    <state width="1899" height="247" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599717536461" />
+    <state width="1899" height="247" key="GridCell.Tab.0.right" timestamp="1599717536462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="247" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599587760949" />
+    <state width="1899" height="247" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599717536462" />
     <state width="1899" height="268" key="GridCell.Tab.1.bottom" timestamp="1598641557314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -461,10 +464,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598079431112" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599571022715">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599588380557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599571022715" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599588380557" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599488867975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
