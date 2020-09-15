@@ -1,168 +1,79 @@
-FAILED                     [ 66%]
-test_add_new_contact.py:4 (test_add_new_contact)
-app = <fixture.application.Application object at 0x0000016627CCA220>
+PASSED                        [ 16%]FAILED [ 33%]
+test_add_group.py:22 (test_add_group[None:name0dU  Xf#[;header?2NoQ.  h L3;footerty="q Std8&u Cd@ >])
+[27:New group;None;None,
+ 29:test_upd;None;None,
+ 46:New group;None;None,
+ 47:test;None;None,
+ 48:;None;None,
+ 49:name* Q#r;None;None,
+ 50:name;None;None,
+ 51:name;None;None,
+ 52:;None;None,
+ 53:name 6-$](;None;None,
+ 54:name;None;None,
+ 55:nameqd;None;None,
+ 56:name;None;None,
+ 57:;None;None,
+ 58:name(4NCm g;None;None,
+ 59:nameI g;None;None,
+ 60:namekvih =;None;None,
+ 61:nameYbA;None;None,
+ 62:;None;None,
+ None:name0dU  Xf#[;header?2NoQ.  h L3;footerty="q Std8&u Cd@ >] != [27:New group;None;None,
+ 29:test_upd;None;None,
+ 46:New group;None;None,
+ 47:test;None;None,
+ 48:;None;None,
+ 49:name* Q#r;None;None,
+ 50:name;None;None,
+ 51:name;None;None,
+ 52:;None;None,
+ 53:name 6-$](;None;None,
+ 54:name;None;None,
+ 55:nameqd;None;None,
+ 56:name;None;None,
+ 57:;None;None,
+ 58:name(4NCm g;None;None,
+ 59:nameI g;None;None,
+ 60:namekvih =;None;None,
+ 61:nameYbA;None;None,
+ 62:;None;None,
+ 63:name0dU Xf#[;None;None]
 
-    def test_add_new_contact(app):
->       app.session.login(username="admin", password="secret")
+<Click to see difference>
 
-test_add_new_contact.py:6:
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-..\fixture\session.py:9: in login
-    wd.find_element_by_name("user").click()
-..\env\lib\site-packages\selenium\webdriver\remote\webdriver.py:496: in find_element_by_name
-    return self.find_element(by=By.NAME, value=name)
-..\env\lib\site-packages\selenium\webdriver\remote\webdriver.py:976: in find_element
-    return self.execute(Command.FIND_ELEMENT, {
-..\env\lib\site-packages\selenium\webdriver\remote\webdriver.py:321: in execute
-    self.error_handler.check_response(response)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app = <fixture.application.Application object at 0x0000027AA93E6400>
+group = None:name0dU  Xf#[;header?2NoQ.  h L3;footerty="q Std8&u Cd@ >
 
-self = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x0000016627CCAAF0>
-response = {'status': 500, 'value': '{"value":{"error":"unknown error","message":"Failed to convert data to an object","stacktrace":""}}'}
+    @pytest.mark.parametrize("group", testdata, ids=[repr(x) for x in testdata])
+    def test_add_group(app, group):
+            old_groups = app.group.get_group_list()
+            app.group.create(group)
+            assert len(old_groups) + 1 == app.group.count()
+            new_groups = app.group.get_group_list()
+            old_groups.append(group)
+>           assert sorted(old_groups, key = Group.id_or_max) == sorted(new_groups, key = Group.id_or_max)
+E           assert [27:New group;None;None,\n 29:test_upd;None;None,\n 46:New group;None;None,\n 47:test;None;None,\n 48:;None;None,\n 49:name* Q#r;None;None,\n 50:name;None;None,\n 51:name;None;None,\n 52:;None;None,\n 53:name 6-$](;None;None,\n 54:name;None;None,\n 55:nameqd;None;None,\n 56:name;None;None,\n 57:;None;None,\n 58:name(4NCm g;None;None,\n 59:nameI g;None;None,\n 60:namekvih =;None;None,\n 61:nameYbA;None;None,\n 62:;None;None,\n None:name0dU  Xf#[;header?2NoQ.  h L3;footerty="q Std8&u Cd@ >] == [27:New group;None;None,\n 29:test_upd;None;None,\n 46:New group;None;None,\n 47:test;None;None,\n 48:;None;None,\n 49:name* Q#r;None;None,\n 50:name;None;None,\n 51:name;None;None,\n 52:;None;None,\n 53:name 6-$](;None;None,\n 54:name;None;None,\n 55:nameqd;None;None,\n 56:name;None;None,\n 57:;None;None,\n 58:name(4NCm g;None;None,\n 59:nameI g;None;None,\n 60:namekvih =;None;None,\n 61:nameYbA;None;None,\n 62:;None;None,\n 63:name0dU Xf#[;None;None]
 
-    def check_response(self, response):
-        """
-        Checks that a JSON response from the WebDriver does not have an error.
+test_add_group.py:30: AssertionError
+FAILED [ 50%]
+test_add_group.py:22 (test_add_group[None:name2;header`}5;footer%v(f.><;#>a'cH`p])
+21 != 20
 
-        :Args:
-         - response - The JSON response from the WebDriver server as a dictionary
-           object.
+Expected :20
+Actual   :21
+<Click to see difference>
 
-        :Raises: If the response contains an error message.
-        """
-        status = response.get('status', None)
-        if status is None or status == ErrorCode.SUCCESS:
-            return
-        value = None
-        message = response.get("message", "")
-        screen = response.get("screen", "")
-        stacktrace = None
-        if isinstance(status, int):
-            value_json = response.get('value', None)
-            if value_json and isinstance(value_json, basestring):
-                import json
-                try:
-                    value = json.loads(value_json)
-                    if len(value.keys()) == 1:
-                        value = value['value']
-                    status = value.get('error', None)
-                    if status is None:
-                        status = value["status"]
-                        message = value["value"]
-                        if not isinstance(message, basestring):
-                            value = message
-                            message = message.get('message')
-                    else:
-                        message = value.get('message', None)
-                except ValueError:
-                    pass
+app = <fixture.application.Application object at 0x0000027AA93E6400>
+group = None:name2;header`}5;footer%v(f.><;#>a'cH`p
 
-        exception_class = ErrorInResponseException
-        if status in ErrorCode.NO_SUCH_ELEMENT:
-            exception_class = NoSuchElementException
-        elif status in ErrorCode.NO_SUCH_FRAME:
-            exception_class = NoSuchFrameException
-        elif status in ErrorCode.NO_SUCH_WINDOW:
-            exception_class = NoSuchWindowException
-        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
-            exception_class = StaleElementReferenceException
-        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
-            exception_class = ElementNotVisibleException
-        elif status in ErrorCode.INVALID_ELEMENT_STATE:
-            exception_class = InvalidElementStateException
-        elif status in ErrorCode.INVALID_SELECTOR \
-                or status in ErrorCode.INVALID_XPATH_SELECTOR \
-                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
-            exception_class = InvalidSelectorException
-        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
-            exception_class = ElementNotSelectableException
-        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
-            exception_class = ElementNotInteractableException
-        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
-            exception_class = InvalidCookieDomainException
-        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
-            exception_class = UnableToSetCookieException
-        elif status in ErrorCode.TIMEOUT:
-            exception_class = TimeoutException
-        elif status in ErrorCode.SCRIPT_TIMEOUT:
-            exception_class = TimeoutException
-        elif status in ErrorCode.UNKNOWN_ERROR:
-            exception_class = WebDriverException
-        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
-            exception_class = UnexpectedAlertPresentException
-        elif status in ErrorCode.NO_ALERT_OPEN:
-            exception_class = NoAlertPresentException
-        elif status in ErrorCode.IME_NOT_AVAILABLE:
-            exception_class = ImeNotAvailableException
-        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
-            exception_class = ImeActivationFailedException
-        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
-            exception_class = MoveTargetOutOfBoundsException
-        elif status in ErrorCode.JAVASCRIPT_ERROR:
-            exception_class = JavascriptException
-        elif status in ErrorCode.SESSION_NOT_CREATED:
-            exception_class = SessionNotCreatedException
-        elif status in ErrorCode.INVALID_ARGUMENT:
-            exception_class = InvalidArgumentException
-        elif status in ErrorCode.NO_SUCH_COOKIE:
-            exception_class = NoSuchCookieException
-        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
-            exception_class = ScreenshotException
-        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
-            exception_class = ElementClickInterceptedException
-        elif status in ErrorCode.INSECURE_CERTIFICATE:
-            exception_class = InsecureCertificateException
-        elif status in ErrorCode.INVALID_COORDINATES:
-            exception_class = InvalidCoordinatesException
-        elif status in ErrorCode.INVALID_SESSION_ID:
-            exception_class = InvalidSessionIdException
-        elif status in ErrorCode.UNKNOWN_METHOD:
-            exception_class = UnknownMethodException
-        else:
-            exception_class = WebDriverException
-        if value == '' or value is None:
-            value = response['value']
-        if isinstance(value, basestring):
-            if exception_class == ErrorInResponseException:
-                raise exception_class(response, value)
-            raise exception_class(value)
-        if message == "" and 'message' in value:
-            message = value['message']
+    @pytest.mark.parametrize("group", testdata, ids=[repr(x) for x in testdata])
+    def test_add_group(app, group):
+            old_groups = app.group.get_group_list()
+            app.group.create(group)
+>           assert len(old_groups) + 1 == app.group.count()
+E           assert 21 == 20
 
-        screen = None
-        if 'screen' in value:
-            screen = value['screen']
-
-        stacktrace = None
-        if 'stackTrace' in value and value['stackTrace']:
-            stacktrace = []
-            try:
-                for frame in value['stackTrace']:
-                    line = self._value_or_default(frame, 'lineNumber', '')
-                    file = self._value_or_default(frame, 'fileName', '<anonymous>')
-                    if line:
-                        file = "%s:%s" % (file, line)
-                    meth = self._value_or_default(frame, 'methodName', '<anonymous>')
-                    if 'className' in frame:
-                        meth = "%s.%s" % (frame['className'], meth)
-                    msg = "    at %s (%s)"
-                    msg = msg % (meth, file)
-                    stacktrace.append(msg)
-            except TypeError:
-                pass
-        if exception_class == ErrorInResponseException:
-            raise exception_class(response, message)
-        elif exception_class == UnexpectedAlertPresentException:
-            alert_text = None
-            if 'data' in value:
-                alert_text = value['data'].get('text')
-            elif 'alert' in value:
-                alert_text = value['alert'].get('text')
-            raise exception_class(message, screen, stacktrace, alert_text)
->       raise exception_class(message, screen, stacktrace)
-E       selenium.common.exceptions.WebDriverException: Message: Failed to convert data to an object
-
-..\env\lib\site-packages\selenium\webdriver\remote\errorhandler.py:242: WebDriverException
-
-test_del_group.py::test_delete_first_group
+test_add_group.py:27: AssertionError
+PASSED [ 66%]PASSED [ 83%]PASSED [100%]
 Assertion failed
