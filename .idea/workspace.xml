@@ -29,9 +29,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36c426b6-83a5-4ac3-8f08-6301e57081cf" name="Default Changelist" comment="Add new contact test was created &#10;New class Contact was added">
+      <change afterPath="$PROJECT_DIR$/target.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fixture/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/application.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +62,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -94,7 +95,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -153,6 +154,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python tests.pytest for test_add_group.test_add_group" />
+      <item itemvalue="Python tests.pytest for test_add_new_contact.test_add_new_contact" />
+      <item itemvalue="Python tests.pytest for test_other_info.test_all_info_on_page" />
+      <item itemvalue="Python tests.pytest for test_phones.test_phones_on_contact_page" />
+      <item itemvalue="Python tests.pytest for test_phones.test_phones_on_page" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.pytest for test_add_new_contact.test_add_new_contact" />
@@ -378,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600258960090</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="task 16">
+      <created>1600260634824</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1600260634824</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -407,7 +422,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="First test was created;" />
     <MESSAGE value="Group class was created &#10;Add group test was updated according to homework requirements" />
     <MESSAGE value="Add new contact test was created &#10;New class Contact was added" />
     <MESSAGE value="Fixture was added" />
@@ -432,17 +446,18 @@
     <MESSAGE value="task 14" />
     <MESSAGE value="asserts errors" />
     <MESSAGE value="task 15" />
-    <option name="LAST_COMMIT_MESSAGE" value="task 15" />
+    <MESSAGE value="task 16" />
+    <option name="LAST_COMMIT_MESSAGE" value="task 16" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="383" key="#Notifications" timestamp="1597566975716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="845" y="383" key="#Notifications/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597566975716" />
-    <state x="414" y="175" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600260517864">
+    <state x="414" y="175" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600851835780">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600260517864" />
+    <state x="414" y="175" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600851835780" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1600259251659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -459,22 +474,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="827" y="270" key="EnvironmentVariablesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597591394131" />
-    <state width="1899" height="319" key="GridCell.Tab.0.bottom" timestamp="1600258784320">
+    <state x="740" y="287" key="FileChooserDialogImpl" timestamp="1600851123368">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600258784320" />
-    <state width="1899" height="319" key="GridCell.Tab.0.center" timestamp="1600258784320">
+    <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600851123368" />
+    <state width="1899" height="319" key="GridCell.Tab.0.bottom" timestamp="1600852083892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="319" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600258784320" />
-    <state width="1899" height="319" key="GridCell.Tab.0.left" timestamp="1600258784319">
+    <state width="1899" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600852083892" />
+    <state width="1899" height="319" key="GridCell.Tab.0.center" timestamp="1600852083892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="319" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600258784319" />
-    <state width="1899" height="319" key="GridCell.Tab.0.right" timestamp="1600258784320">
+    <state width="1899" height="319" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600852083892" />
+    <state width="1899" height="319" key="GridCell.Tab.0.left" timestamp="1600852083892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="319" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600258784320" />
+    <state width="1899" height="319" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600852083892" />
+    <state width="1899" height="319" key="GridCell.Tab.0.right" timestamp="1600852083892">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="319" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600852083892" />
     <state width="1899" height="268" key="GridCell.Tab.1.bottom" timestamp="1598641557314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -499,10 +518,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598079431112" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600258978630">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600260644387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600258978630" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600260644387" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599488867975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
